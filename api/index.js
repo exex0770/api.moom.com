@@ -5,37 +5,64 @@ const GROUPS = {
   '1': {
     nameEn: 'TOD BEIN SPORTS',
     nameAr: 'TOD BEIN SPORTS',
-    file: 'TOD BEIN SPORTS.m3u'
+    file: 'TOD BEIN SPORTS.m3u',
+    visible: true
   },
+
   '2': {
     nameEn: 'BEIN SPORTS MOOM',
     nameAr: 'BEIN SPORTS MOOM',
-    file: 'BEIN SPORTS MOOM.m3u'
+    file: 'BEIN SPORTS MOOM.m3u',
+    visible: true
   },
+
   '3': {
     nameEn: 'ALWAN MOOM SPORT',
     nameAr: 'ALWAN MOOM SPORT',
-    file: 'ALWAN MOOM SPORT.m3u'
+    file: 'ALWAN MOOM SPORT.m3u',
+    visible: true
   },
+
   '4': {
     nameEn: 'FADJR MOOM SPORT',
     nameAr: 'FADJR MOOM SPORT',
-    file: 'FADJR MOOM SPORT.m3u'
+    file: 'FADJR MOOM SPORT.m3u',
+    visible: true
   },
+
   '5': {
     nameEn: 'BEIN SPORTS',
     nameAr: 'BEIN SPORTS',
-    file: 'BEIN SPORTS.m3u'
+    file: 'BEIN SPORTS.m3u',
+    visible: true
   },
+
   '6': {
     nameEn: 'ALKASS SPORTS',
     nameAr: 'ALKASS SPORTS',
-    file: 'alkass.m3u'
+    file: 'alkass.m3u',
+    visible: false
   }
 };
 
 const LOGO =
   'https://i.imageupload.app/6a082ae964db7774dd08.png';
+
+
+/* =========================================================
+   CHECK GROUP VISIBILITY
+========================================================= */
+
+function isGroupVisible(groupId) {
+  const group = GROUPS[String(groupId)];
+
+  if (!group) {
+    return false;
+  }
+
+  return group.visible === true;
+}
+
 
 /* =========================================================
    ATTRIBUTE READER
@@ -56,6 +83,7 @@ function getAttribute(line, attribute) {
     ? match[1].trim()
     : '';
 }
+
 
 /* =========================================================
    QUALITY NORMALIZATION
@@ -109,6 +137,7 @@ function normalizeQuality(value) {
   return q;
 }
 
+
 /* =========================================================
    EXTRACT QUALITY FROM NAME
 ========================================================= */
@@ -120,18 +149,9 @@ function extractQualityFromName(name) {
 
   const text = name.trim();
 
-  /*
-   LON
-  */
-
   if (/\bLON\b/i.test(text)) {
     return 'LON';
   }
-
-  /*
-   Numeric
-   240P / 244P / 360P / 480P / 720P / 1080P ...
-  */
 
   const numeric = text.match(
     /\b(144|240|244|360|480|576|720|900|1080|1440|2160|2880|4320)P?\b/i
@@ -140,10 +160,6 @@ function extractQualityFromName(name) {
   if (numeric) {
     return `${numeric[1]}P`;
   }
-
-  /*
-   Text
-  */
 
   const textQuality = text.match(
     /\b(SD|HD|FHD|UHD|4K|8K|HDR10\+?|HDR|DV)\b/i
@@ -155,6 +171,7 @@ function extractQualityFromName(name) {
 
   return '';
 }
+
 
 /* =========================================================
    EXTRACT QUALITY
@@ -173,7 +190,8 @@ function extractQuality(info, originalName) {
 
   const tvgName = getAttribute(info, 'tvg-name');
 
-  const fromTvgName = extractQualityFromName(tvgName);
+  const fromTvgName =
+    extractQualityFromName(tvgName);
 
   if (fromTvgName) {
     return fromTvgName;
@@ -181,6 +199,7 @@ function extractQuality(info, originalName) {
 
   return extractQualityFromName(originalName);
 }
+
 
 /* =========================================================
    REMOVE QUALITY FROM DISPLAY NAME
@@ -193,27 +212,15 @@ function cleanChannelName(name) {
 
   let result = String(name).trim();
 
-  /*
-   Remove LON
-  */
-
   result = result.replace(
     /\s+\bLON\b\s*$/i,
     ''
   );
 
-  /*
-   Remove SD / HD / FHD / UHD / 4K / 8K
-  */
-
   result = result.replace(
     /\s+\b(?:SD|HD|FHD|UHD|4K|8K|HDR10\+?|HDR|DV)\b\s*$/i,
     ''
   );
-
-  /*
-   Remove numeric quality
-  */
 
   result = result.replace(
     /\s+\b(?:144|240|244|360|480|576|720|900|1080|1440|2160|2880|4320)P?\b\s*$/i,
@@ -222,6 +229,7 @@ function cleanChannelName(name) {
 
   return result.trim();
 }
+
 
 /* =========================================================
    QUALITY SORT
@@ -234,21 +242,9 @@ function qualityPriority(quality) {
 
   const q = normalizeQuality(quality);
 
-  /*
-   LON MUST ALWAYS BE FIRST
-  */
-
   if (q === 'LON') {
     return 0;
   }
-
-  /*
-   Requested order:
-   LON
-   244P / 240P
-   360P
-   then other qualities
-  */
 
   const special = {
     '244P': 10,
@@ -260,19 +256,11 @@ function qualityPriority(quality) {
     return special[q];
   }
 
-  /*
-   Standard numeric quality
-  */
-
   const numeric = q.match(/^(\d+)P$/);
 
   if (numeric) {
     return 100 + parseInt(numeric[1], 10);
   }
-
-  /*
-   Text qualities
-  */
 
   const text = {
     'SD': 500,
@@ -293,6 +281,7 @@ function qualityPriority(quality) {
 
   return 999999;
 }
+
 
 /* =========================================================
    SORT QUALITIES
@@ -319,14 +308,29 @@ function sortQualities(qualities) {
   });
 }
 
+
 /* =========================================================
    READ PLAYLIST
 ========================================================= */
 
 function readPlaylist(groupId) {
+
   const group = GROUPS[String(groupId)];
 
   if (!group) {
+    return [];
+  }
+
+  /*
+   IMPORTANT:
+   إذا القسم مخفي لا نقرأ ملف M3U أصلًا
+  */
+
+  if (!isGroupVisible(groupId)) {
+    console.log(
+      `Group ${groupId} is HIDDEN`
+    );
+
     return [];
   }
 
@@ -340,6 +344,7 @@ function readPlaylist(groupId) {
   console.log('Reading group:', groupId);
   console.log('File:', group.file);
   console.log('Path:', filePath);
+  console.log('Visible:', group.visible);
   console.log('====================================');
 
   if (!fs.existsSync(filePath)) {
@@ -367,38 +372,17 @@ function readPlaylist(groupId) {
     return [];
   }
 
-  /*
-   Remove BOM
-  */
-
   text = text.replace(
     /^\uFEFF/,
     ''
   );
-
-  /*
-   Split lines
-  */
 
   const lines = text
     .split(/\r?\n/)
     .map(line => line.trim());
 
   /*
-   IMPORTANT:
-   Group by TVG-ID.
-   
-   tvg-id is the PRIMARY KEY.
-   
-   This prevents:
-   
-   beIN1 LON
-   beIN1 SD
-   beIN1 HD
-   
-   from becoming 3 channels.
-   
-   They become ONE channel.
+   Group by TVG-ID
   */
 
   const channelMap = new Map();
@@ -414,6 +398,7 @@ function readPlaylist(groupId) {
     i < lines.length;
     i++
   ) {
+
     const line = lines[i];
 
     if (!line) {
@@ -431,7 +416,7 @@ function readPlaylist(groupId) {
     const info = line;
 
     /*
-     Channel name after comma
+     Channel name
     */
 
     const nameMatch =
@@ -443,7 +428,8 @@ function readPlaylist(groupId) {
         : '';
 
     if (!originalName) {
-      originalName = `Channel ${++autoId}`;
+      originalName =
+        `Channel ${++autoId}`;
     }
 
     /*
@@ -455,11 +441,6 @@ function readPlaylist(groupId) {
         info,
         'tvg-id'
       );
-
-    /*
-     If tvg-id doesn't exist,
-     use cleaned channel name.
-    */
 
     const cleanedName =
       cleanChannelName(
@@ -475,10 +456,6 @@ function readPlaylist(groupId) {
 
     /*
      Quality
-   
-     tvg-quality first,
-     then tvg-name,
-     then visible name.
     */
 
     const quality =
@@ -486,11 +463,6 @@ function readPlaylist(groupId) {
         info,
         originalName
       );
-
-    /*
-     If no quality exists,
-     don't invent one.
-    */
 
     const finalQuality =
       quality || 'AUTO';
@@ -506,7 +478,7 @@ function readPlaylist(groupId) {
       ) || LOGO;
 
     /*
-     Group
+     Group title
     */
 
     const m3uGroupName =
@@ -517,9 +489,6 @@ function readPlaylist(groupId) {
 
     /*
      STREAM URL
-   
-     Read the line immediately
-     after EXTINF.
     */
 
     let link = '';
@@ -557,14 +526,7 @@ function readPlaylist(groupId) {
     }
 
     /*
-     PRIMARY GROUP KEY
-   
-     TVG-ID ONLY.
-     
-     Do NOT use:
-     - quality
-     - URL
-     - display name
+     PRIMARY KEY = TVG-ID
     */
 
     const mapKey =
@@ -577,6 +539,7 @@ function readPlaylist(groupId) {
     */
 
     if (!channelMap.has(mapKey)) {
+
       channelMap.set(
         mapKey,
         {
@@ -605,16 +568,11 @@ function readPlaylist(groupId) {
     }
 
     /*
-     Get existing channel
+     Existing channel
     */
 
     const channel =
       channelMap.get(mapKey);
-
-    /*
-     If first entry had empty
-     name, update it.
-    */
 
     if (
       !channel.name &&
@@ -633,23 +591,19 @@ function readPlaylist(groupId) {
        channel.logo === LOGO) &&
       logo
     ) {
-      channel.logo = logo;
 
-      channel.mobile_logo = logo;
+      channel.logo =
+        logo;
 
-      channel.real_channel_logo = logo;
+      channel.mobile_logo =
+        logo;
+
+      channel.real_channel_logo =
+        logo;
     }
 
     /*
      QUALITY DUPLICATE CHECK
-   
-     IMPORTANT:
-     Same quality + different URL
-     should NOT overwrite existing
-     quality.
-     
-     But if same quality appears
-     multiple times, first one wins.
     */
 
     const alreadyExists =
@@ -662,27 +616,21 @@ function readPlaylist(groupId) {
       );
 
     if (!alreadyExists) {
+
       channel.qualities.push({
+
         quality:
           finalQuality,
 
-        /*
-         Main field
-        */
-
         link:
           link,
-
-        /*
-         Compatibility fields
-         for different clients.
-        */
 
         url:
           link,
 
         streamUrl:
           link
+
       });
     }
   }
@@ -699,9 +647,6 @@ function readPlaylist(groupId) {
     const channel
     of channelMap.values()
   ) {
-    /*
-     Sort qualities
-    */
 
     sortQualities(
       channel.qualities
@@ -709,11 +654,6 @@ function readPlaylist(groupId) {
 
     /*
      Main stream
-   
-     First quality is the
-     currently selected quality.
-     
-     LON will be first when exists.
     */
 
     const mainQuality =
@@ -751,15 +691,10 @@ function readPlaylist(groupId) {
 
     /*
      Final channel
-   
-     ONE CARD ONLY.
-     
-     All qualities remain inside:
-     
-     qualities[]
     */
 
     channels.push({
+
       id:
         channelId,
 
@@ -873,10 +808,11 @@ function readPlaylist(groupId) {
   );
 
   /*
-   Debug information
+   Debug
   */
 
   channels.forEach(channel => {
+
     console.log(
       `[CHANNEL] ${channel.name_en}`
     );
@@ -894,10 +830,12 @@ function readPlaylist(groupId) {
     console.log(
       `  count: ${channel.quality_count}`
     );
+
   });
 
   return channels;
 }
+
 
 /* =========================================================
    SUCCESS RESPONSE
@@ -905,6 +843,7 @@ function readPlaylist(groupId) {
 
 function success(data) {
   return {
+
     api_status:
       200,
 
@@ -913,32 +852,76 @@ function success(data) {
 
     data:
       data
+
   };
 }
 
+
 /* =========================================================
-   GET GROUPS - مع ترتيب مخصص
+   GET GROUPS
+   ترتيب مخصص + إخفاء الأقسام
 ========================================================= */
 
 function getGroups() {
-  // الترتيب المطلوب حسب الطلب
-  const order = ['1', '5', '3', '2', '4', '6'];
 
-  return order.map(id => {
-    const group = GROUPS[id];
-    return {
-      id: id,
-      name_en: group.nameEn,
-      name_ar: group.nameAr,
-      logo: LOGO,
-      mobile_logo: LOGO,
-      main_icon: LOGO,
-      sub_icon: LOGO,
-      link: '',
-      Maintenance: '0'
-    };
-  });
+  const order = [
+    '1',
+    '5',
+    '3',
+    '2',
+    '4',
+    '6'
+  ];
+
+  return order
+    .filter(id => {
+
+      /*
+       فقط الأقسام التي visible = true
+      */
+
+      return isGroupVisible(id);
+
+    })
+    .map(id => {
+
+      const group =
+        GROUPS[id];
+
+      return {
+
+        id:
+          id,
+
+        name_en:
+          group.nameEn,
+
+        name_ar:
+          group.nameAr,
+
+        logo:
+          LOGO,
+
+        mobile_logo:
+          LOGO,
+
+        main_icon:
+          LOGO,
+
+        sub_icon:
+          LOGO,
+
+        link:
+          '',
+
+        Maintenance:
+          '0'
+
+      };
+
+    });
 }
+
 
 /* =========================================================
    API
@@ -948,6 +931,7 @@ module.exports = (
   req,
   res
 ) => {
+
   const url =
     new URL(
       req.url,
@@ -1017,28 +1001,40 @@ module.exports = (
   if (
     req.method === 'OPTIONS'
   ) {
+
     return res
       .status(200)
       .end();
+
   }
 
   try {
+
     /*
+     ==========================================
      /api?group=1
+     ==========================================
     */
 
     if (
       pathname === '/api' &&
       groupId
     ) {
+
+      /*
+       القسم غير موجود
+      */
+
       if (
         !GROUPS[
           String(groupId)
         ]
       ) {
+
         return res
           .status(400)
           .json({
+
             api_status:
               400,
 
@@ -1047,7 +1043,25 @@ module.exports = (
 
             data:
               []
+
           });
+
+      }
+
+      /*
+       القسم موجود لكن مخفي
+      */
+
+      if (
+        !isGroupVisible(groupId)
+      ) {
+
+        return res
+          .status(200)
+          .json(
+            success([])
+          );
+
       }
 
       const channels =
@@ -1062,15 +1076,19 @@ module.exports = (
         );
     }
 
+
     /*
+     ==========================================
      /api
      ALL GROUPS
+     ==========================================
     */
 
     if (
       pathname === '/api' &&
       !groupId
     ) {
+
       return res
         .status(200)
         .json(
@@ -1078,15 +1096,20 @@ module.exports = (
             getGroups()
           )
         );
+
     }
 
+
     /*
+     ==========================================
      /api/groups
+     ==========================================
     */
 
     if (
       pathname === '/api/groups'
     ) {
+
       return res
         .status(200)
         .json(
@@ -1094,26 +1117,37 @@ module.exports = (
             getGroups()
           )
         );
+
     }
 
+
     /*
+     ==========================================
      /api/channels?group=1
+     ==========================================
     */
 
     if (
       pathname === '/api/channels'
     ) {
+
       const id =
         groupId || '1';
+
+      /*
+       Invalid group
+      */
 
       if (
         !GROUPS[
           String(id)
         ]
       ) {
+
         return res
           .status(400)
           .json({
+
             api_status:
               400,
 
@@ -1122,7 +1156,25 @@ module.exports = (
 
             data:
               []
+
           });
+
+      }
+
+      /*
+       Hidden group
+      */
+
+      if (
+        !isGroupVisible(id)
+      ) {
+
+        return res
+          .status(200)
+          .json(
+            success([])
+          );
+
       }
 
       const channels =
@@ -1133,30 +1185,52 @@ module.exports = (
         .json(
           success(channels)
         );
+
     }
 
+
     /*
+     ==========================================
      /api/channel?id_channel=1_1
+     ==========================================
     */
 
     if (
       pathname === '/api/channel'
     ) {
+
       if (!channelId) {
+
         return res
           .status(200)
           .json(
             success([])
           );
+
       }
 
       let channel =
         null;
 
+      /*
+       البحث فقط داخل الأقسام الظاهرة
+      */
+
       for (
         const id
         of Object.keys(GROUPS)
       ) {
+
+        /*
+         تجاهل القسم المخفي
+        */
+
+        if (
+          !isGroupVisible(id)
+        ) {
+          continue;
+        }
+
         const channels =
           readPlaylist(id);
 
@@ -1168,10 +1242,12 @@ module.exports = (
           );
 
         if (found) {
+
           channel =
             found;
 
           break;
+
         }
       }
 
@@ -1184,10 +1260,14 @@ module.exports = (
               : []
           )
         );
+
     }
 
+
     /*
-     Empty endpoints
+     ==========================================
+     EMPTY ENDPOINTS
+     ==========================================
     */
 
     if (
@@ -1206,20 +1286,26 @@ module.exports = (
       pathname ===
         '/api/schedules'
     ) {
+
       return res
         .status(200)
         .json(
           success([])
         );
+
     }
 
+
     /*
+     ==========================================
      NOT FOUND
+     ==========================================
     */
 
     return res
       .status(404)
       .json({
+
         api_status:
           404,
 
@@ -1228,8 +1314,11 @@ module.exports = (
 
         data:
           []
+
       });
+
   } catch (error) {
+
     console.error(
       'API ERROR:',
       error
@@ -1238,6 +1327,7 @@ module.exports = (
     return res
       .status(500)
       .json({
+
         api_status:
           500,
 
@@ -1246,6 +1336,8 @@ module.exports = (
 
         data:
           []
+
       });
+
   }
 };
