@@ -28,9 +28,9 @@ const GROUPS = {
     file: 'BEIN SPORTS.m3u'
   },
   '6': {
-    nameEn: 'ALKASS SPORTS',
+    #nameEn: 'ALKASS SPORTS',
     nameAr: 'ALKASS SPORTS',
-    file: 'alkass.m3u'
+    file: '#alkass.m3u'
   }
 };
 
