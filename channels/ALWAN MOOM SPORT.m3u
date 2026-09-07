@@ -4,13 +4,12 @@
 # ALWAN SPORT 1
 # =========================
 
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport1-4k",Alwan Sport 1 4K
+#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport1",Alwan Sport 1
+#EXT-X-STREAM-INF:BANDWIDTH=12000000,RESOLUTION=3840x2160
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VXRiZ3U0ekFBQ3ZIdHVodjdwb2RvN2p1Y3lJekVUN2hSemVPTm54STdXeg
-
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport1-fhd",Alwan Sport 1 FHD
+#EXT-X-STREAM-INF:BANDWIDTH=6000000,RESOLUTION=1920x1080
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VEI0QU83a293YU5GL25rVi9UYm9uQkNCSWpvL1pPYVhvTUtlZ2RZdWU2Vg
-
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport1-480p",Alwan Sport 1 480P
+#EXT-X-STREAM-INF:BANDWIDTH=1500000,RESOLUTION=854x480
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VEI0QU83a293YU5GL25rVi9UYm9uQm9ZZlU3anRBRklZV1ppRHhQUXhYRw
 
 
@@ -18,13 +17,12 @@ http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VEI0QU83a293YU5GL25rVi9UYm
 # ALWAN SPORT 2
 # =========================
 
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport2-4k",Alwan Sport 2 4K
+#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport2",Alwan Sport 2
+#EXT-X-STREAM-INF:BANDWIDTH=12000000,RESOLUTION=3840x2160
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VXRiZ3U0ekFBQ3ZIdHVodjdwb2RvNlM0c3dLaWZHL1l1aHJQT0FkeUovWg
-
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport2-fhd",Alwan Sport 2 FHD
+#EXT-X-STREAM-INF:BANDWIDTH=6000000,RESOLUTION=1920x1080
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VEI0QU83a293YU5GL25rVi9UYm9uQ210Szk1YWVRdCsydkxkR0owK05iSg
-
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport2-480p",Alwan Sport 2 480P
+#EXT-X-STREAM-INF:BANDWIDTH=1500000,RESOLUTION=854x480
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VEI0QU83a293YU5GL25rVi9UYm9uQmMveG0xbG9YWS93dmFickxiWVZKVw
 
 
@@ -32,13 +30,12 @@ http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VEI0QU83a293YU5GL25rVi9UYm
 # ALWAN SPORT 3
 # =========================
 
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport3-4k",Alwan Sport 3 4K
+#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport3",Alwan Sport 3
+#EXT-X-STREAM-INF:BANDWIDTH=12000000,RESOLUTION=3840x2160
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VXRiZ3U0ekFBQ3ZIdHVodjdwb2RvNFNYR1k0RXdlTjFTRytkUnZhQ2thZQ
-
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport3-fhd",Alwan Sport 3 FHD
+#EXT-X-STREAM-INF:BANDWIDTH=6000000,RESOLUTION=1920x1080
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VEI0QU83a293YU5GL25rVi9UYm9uQ1VXZVZrcXNXaTd5NnJGelF3RFJiSQ
-
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport3-480p",Alwan Sport 3 480P
+#EXT-X-STREAM-INF:BANDWIDTH=1500000,RESOLUTION=854x480
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VEI0QU83a293YU5GL25rVi9UYm9uREJRVm5YVWU1TGhkWURpODlkOElSUQ
 
 
@@ -46,13 +43,12 @@ http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VEI0QU83a293YU5GL25rVi9UYm
 # ALWAN SPORT 4
 # =========================
 
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport4-4k",Alwan Sport 4 4K
+#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport4",Alwan Sport 4
+#EXT-X-STREAM-INF:BANDWIDTH=12000000,RESOLUTION=3840x2160
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WG9tY2Y3UWF5REdRcUYwY2phbW9vOE5ZMjkrNE5nc3hIdThnc1gzODlUdQ
-
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport4-fhd",Alwan Sport 4 FHD
+#EXT-X-STREAM-INF:BANDWIDTH=6000000,RESOLUTION=1920x1080
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VEI0QU83a293YU5GL25rVi9UYm9uQnBYZ0RMdmtXZjV5ZFNlamt5Q2p6WA
-
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport4-480p",Alwan Sport 4 480P
+#EXT-X-STREAM-INF:BANDWIDTH=1500000,RESOLUTION=854x480
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VEI0QU83a293YU5GL25rVi9UYm9uRE13ODBEQjB2YjJMOE1uY2RLMUJwMQ
 
 
@@ -60,13 +56,12 @@ http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VEI0QU83a293YU5GL25rVi9UYm
 # ALWAN SPORT 5
 # =========================
 
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport5-4k",Alwan Sport 5 4K
+#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport5",Alwan Sport 5
+#EXT-X-STREAM-INF:BANDWIDTH=12000000,RESOLUTION=3840x2160
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WG9tY2Y3UWF5REdRcUYwY2phbW9vOEt4L0RiOUJ4L0RJc0txR2FuQ1BhWQ
-
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport5-fhd",Alwan Sport 5 FHD
+#EXT-X-STREAM-INF:BANDWIDTH=6000000,RESOLUTION=1920x1080
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VEI0QU83a293YU5GL25rVi9UYm9uRGVxMzFMVi82RlA4NVBTZURDR0EvUA
-
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport5-480p",Alwan Sport 5 480P
+#EXT-X-STREAM-INF:BANDWIDTH=1500000,RESOLUTION=854x480
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WXV5cTNkanQ5QWJ3Titzb2VqL3k0Ti9vSWwwcDd2UHF0QmJsTnhMRTNkaQ
 
 
@@ -74,13 +69,12 @@ http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WXV5cTNkanQ5QWJ3Titzb2VqL3
 # ALWAN SPORT 6
 # =========================
 
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport6-4k",Alwan Sport 6 4K
+#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport6",Alwan Sport 6
+#EXT-X-STREAM-INF:BANDWIDTH=12000000,RESOLUTION=3840x2160
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WG9tY2Y3UWF5REdRcUYwY2phbW9vOUo3citnallNQXAxZ0pFazVKajlzQg
-
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport6-fhd",Alwan Sport 6 FHD
+#EXT-X-STREAM-INF:BANDWIDTH=6000000,RESOLUTION=1920x1080
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10VEI0QU83a293YU5GL25rVi9UYm9uQ1lFVVViWDllQ0FlWUVPMUFWZUExTQ
-
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport6-480p",Alwan Sport 6 480P
+#EXT-X-STREAM-INF:BANDWIDTH=1500000,RESOLUTION=854x480
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WXV5cTNkanQ5QWJ3Titzb2VqL3k0UElsdjVLTlN5ekVGMzRVRmVpNzFJWQ
 
 
@@ -88,7 +82,8 @@ http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WXV5cTNkanQ5QWJ3Titzb2VqL3
 # ALWAN SPORT 8
 # =========================
 
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport8-4k",Alwan Sport 8 4K
+#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport8",Alwan Sport 8
+#EXT-X-STREAM-INF:BANDWIDTH=12000000,RESOLUTION=3840x2160
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WG9tY2Y3UWF5REdRcUYwY2phbW9vOTFmdmgzN0NnR2x4a0xGWElpM3JNWQ
 
 
@@ -96,7 +91,8 @@ http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WG9tY2Y3UWF5REdRcUYwY2phbW
 # ALWAN SPORT 9
 # =========================
 
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport9-4k",Alwan Sport 9 4K
+#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport9",Alwan Sport 9
+#EXT-X-STREAM-INF:BANDWIDTH=12000000,RESOLUTION=3840x2160
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WG9tY2Y3UWF5REdRcUYwY2phbW9vK2VZM3hnbDNiWmJpWjRvNjdVZFJ6cA
 
 
@@ -104,7 +100,8 @@ http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WG9tY2Y3UWF5REdRcUYwY2phbW
 # ALWAN SPORT 10
 # =========================
 
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwansport10-4k",Alwan Sport 10 4K
+#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwan­sport10",Alwan Sport 10
+#EXT-X-STREAM-INF:BANDWIDTH=12000000,RESOLUTION=3840x2160
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WG9tY2Y3UWF5REdRcUYwY2phbW9vOXdpM3JKaThuWmYrY01hYUU1MkVWRQ
 
 
@@ -112,7 +109,8 @@ http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WG9tY2Y3UWF5REdRcUYwY2phbW
 # ALWAN UFC
 # =========================
 
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwanufc-4k",Alwan UFC 4K
+#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwanufc",Alwan UFC
+#EXT-X-STREAM-INF:BANDWIDTH=12000000,RESOLUTION=3840x2160
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WG9tY2Y3UWF5REdRcUYwY2phbW9vOXkzNDBIUFZJSUo0Sk1VYmE2MzJNMQ
 
 
@@ -120,5 +118,6 @@ http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WG9tY2Y3UWF5REdRcUYwY2phbW
 # ALWAN WWE
 # =========================
 
-#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwanwwe-4k",Alwan WWE 4K
+#EXTINF:-1 group-title="AR- ALWAN SPORTS 4K" tvg-logo="https://up6.cc/2026/08/178801170908041.png" tvg-id="alwanwwe",Alwan WWE
+#EXT-X-STREAM-INF:BANDWIDTH=12000000,RESOLUTION=3840x2160
 http://rocketpower.vip:80/dVVGVUtyM3dOaXYxMDBOd0VmYk10WG9tY2Y3UWF5REdRcUYwY2phbW9vKzBOZEFTUURsb1NieDJEYnpYc0dvVw
