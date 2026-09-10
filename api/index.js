@@ -10,9 +10,9 @@ const GROUPS = {
   },
 
   '2': {
-    nameEn: 'BEIN SPORTS MOOM',
-    nameAr: 'BEIN SPORTS MOOM',
-    file: 'BEIN SPORTS MOOM.m3u',
+    nameEn: 'باقات اجنبيه ناقله دوريات',
+    nameAr: 'باقات اجنبيه ناقله دوريات',
+    file: 'باقات اجنبيه ناقله دوريات.m3u',
     visible: true
   },
 
